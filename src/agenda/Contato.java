@@ -14,29 +14,26 @@ public class Contato {
         this.telefone = telefone;
     }
 
-    public Contato(String nome, String sobrenome, String telefone, String[] tag){
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.telefone = telefone;
-        this.tag = tag;
-    }
-
     public String nomeCompleto(){
         return this.nome + " " + this.sobrenome;
     }
-    public String getNome() {
-        return this.nome;
-    }
-
-    public String getSobrenome() {
-        return this.sobrenome;
-    }
-
+   
     public String getTelefone() {
         return this.telefone;
     }
 
-    public String[] getTags(){
-        return this.tag;
+    public void modificaTags(int posicao, String tag){
+        this.tag[posicao] = tag;
+    }
+
+    public String getTag() {
+        String tagsString = "";
+        for(int i = 0; i < tag.length; i++){
+            if(tag[i] != null){
+                tagsString += tag[i] + " ";
+            }
+        }
+        
+        return tagsString;
     }
 }
